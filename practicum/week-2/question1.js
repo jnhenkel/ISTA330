@@ -16,3 +16,5 @@ var runningSum = function(input) {
    }
    return result;
 };
+
+return runningSum;
