@@ -17,4 +17,4 @@ var runningSum = function(input) {
    return result;
 };
 
-return runningSum;
+return runningSum(input);
