@@ -12,7 +12,7 @@ var runningSum = function(input) {
        for (var j=0; j<=0; j++) {
            tempSum += input[j];
        }
-    result.push([tempSum]);
+    result.push(tempSum);
    }
    return result;
 };
