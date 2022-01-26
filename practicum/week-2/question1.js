@@ -17,5 +17,3 @@ var runningSum = function(input) {
    return result;
 };
 
-let myinput = prompt();
-return runningSum(myinput);
