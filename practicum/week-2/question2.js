@@ -10,6 +10,21 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
  */
 
  var canGetEqualCookies = function(cookies, extraCookies) {
-     
-    
+     let max = 0;
+     for (el of cookies) { /*find max in array*/
+             if (el>max) {
+                     max = el;
+             }
+     }
+     let remainder = extraCookies;
+     for (el of cookies) {
+                if (el<max){
+                        let difference = max - el;
+                        remainder -= difference;
+                        if (remainder <=0) {
+                        return false;
+                        }
+                }
+     }
+     return true;
  };
