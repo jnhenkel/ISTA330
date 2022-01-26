@@ -17,5 +17,5 @@ var runningSum = function(input) {
    return result;
 };
 
-const myinput = prompt();
+let myinput = prompt();
 return runningSum(myinput);
