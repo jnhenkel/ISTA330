@@ -29,7 +29,7 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
         let totalElementsFull = 0;
         for (let el of cookies) {
                 if (el==max) {
-                        totalElementsFull++;
+                        totalElementsFull +=1;
                 }
         }
         if (totalElementsFull == totalElements) {
@@ -41,3 +41,5 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
         }
         return false;
  };
+console.log(canGetEqualCookies([5, 6, 1], 6));
+console.log(canGetEqualCookies([3, 5, 2], 6));
