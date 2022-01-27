@@ -6,14 +6,11 @@ For example given the input array [5, 6, 1], the running sum is
 */
 
 var runningSum = function(input) {
-   var result = [];
-   for (var i=0; i<input.length; i++) {
-       var tempSum = 0;
-       for (var j=0; j<=0; j++) {
-           tempSum += input[j];
-       }
-    result.push(tempSum);
-   }
+    var result = [];
+    var tempSum = 0;
+    for (var i=0; i<input.length; i++) {
+        result.push(tempSum + input[i]);    
+        tempSum += input[i];
+    }
    return result;
 };
-
