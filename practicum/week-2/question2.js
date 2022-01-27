@@ -41,5 +41,3 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
         }
         return false;
  };
-console.log(canGetEqualCookies([5, 6, 1], 6));
-console.log(canGetEqualCookies([3, 5, 2], 6));
