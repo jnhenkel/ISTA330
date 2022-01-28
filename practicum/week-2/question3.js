@@ -12,10 +12,11 @@ var numberOfOrderedPairs = function(input) {
     result = 0;
     for (let i=0; i<input.length; i++) {
         for (let j=0; j<input.length; j++) {
-            if (i<l && input[i] < input[j]) {
+            if (i<j && input[i] < input[j]) {
                 result += 1;
             }
         }
     }
     return result;
 };
+

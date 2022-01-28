@@ -21,3 +21,4 @@ var howManyCommon = function(A, B) {
     }
     return result;
 };
+
