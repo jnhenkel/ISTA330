@@ -10,8 +10,8 @@ output: 'hello'
 
 var suffleString = function(input, shuffleIndices) {
     let result =[]
-    for (let el of shuffleIndices) {
-        result.push(input[el]);
+    for (let i=0; i<shuffleIndices.length; i++) {
+        result[shuffleIndices[i]] = input[i];
     }
     return result.join('');
 };
