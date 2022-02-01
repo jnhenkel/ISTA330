@@ -43,31 +43,24 @@ function allPartitions(input){
 
 var maxBalanceNumber = function(input) {
 	let result = [];
-	for (let partition of allPartitions(input)) {
-		let countCheck = partition.length; /* count of number of partitions */
+	for (let partitions of allPartitions(input)) {
+		let countCheck = partitions.length; /* count of number of partitions */
 		let balancedPairs = 0; /* count for pairs in this partition that are equal a's and b's */
-		for (let el of partition) {
+		for (let el of partitions) {
 			let aCount = 0;
 			let bCount = 0;
 			for (let character of el) {
-				/*let aCount = 0;
-				let bCount = 0;*/
 				if (character=='a') {
 					aCount++;
-				} 
-				if (character=='b'){
+				} else {
 					bCount++;
 				}
 			}
-			if ((aCount == bCount) ) {
+			if (aCount == bCount) {
 				balancedPairs++;
 			}
 		}
-		if (countCheck==balancedPairs) {
-			/*return countCheck;*/
-			result.push(countCheck);
-			console.log(partition)
-		}
+		result.push(balancedPairs);
 	}
 	let maxResult = 0;
 	for (let num of result) {
@@ -79,8 +72,3 @@ var maxBalanceNumber = function(input) {
 };
 console.log(maxBalanceNumber("abaabbabab"));
 console.log(maxBalanceNumber("aaababbb"));
-for (let partition of allPartitions("aaababbb")) {
-	if (partition.length==3){
-		console.log(partition);
-	}
-  }
