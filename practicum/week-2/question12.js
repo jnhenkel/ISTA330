@@ -44,7 +44,6 @@ function allPartitions(input){
 var maxBalanceNumber = function(input) {
 	let result = [];
 	for (let partitions of allPartitions(input)) {
-		let countCheck = partitions.length; /* count of number of partitions */
 		let balancedPairs = 0; /* count for pairs in this partition that are equal a's and b's */
 		for (let el of partitions) {
 			let aCount = 0;
