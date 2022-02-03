@@ -8,9 +8,9 @@ Example: input: [-12,3,-1,5,-2,1,-7]
          output: 7
                  because [3,-1,5] has the largest sum.
           */
-/*
+
 var largestSubarray = function(input) {
-	let result = [];
+	/*let result = [];
     let max = 0;
     for (let el of input) {
 		if (el>max) {
@@ -20,6 +20,5 @@ var largestSubarray = function(input) {
 	for (let i=2; i<input.length; i++) {
 		let j = 0;
 		
-	}
+	}*/
  };
-*/
