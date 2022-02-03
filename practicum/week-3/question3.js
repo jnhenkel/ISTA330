@@ -13,5 +13,25 @@ output: [
 */
 
 var PascalTriangle = function(n) {
-
+  let result = [];
+  for (let i=0; i<n; i++) {
+    if (!i) {
+      result.push([1]);
+    } else {
+      let subarray = [];
+      for (let j=0; j<i+1; j++) {
+        let tempCount = 0;
+        if (result[i-1][j-1]) {
+          tempCount += Number(result[i-1][j-1]);
+        }
+        if (result[i-1][j]) {
+          tempCount += Number(result[i-1][j]);
+        }
+        subarray.push(tempCount)
+      }
+      result.push(subarray);
+    }
+  }
+  return result;
 };
+console.log(PascalTriangle(8));
