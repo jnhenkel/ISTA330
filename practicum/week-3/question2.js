@@ -19,8 +19,6 @@ var largestSubarray = function(input) {
     }
 	for (let i=2; i<input.length; i++) {
 		let j = 0;
-		while (j<i) {
-			
-		}
+		
 	}
  };

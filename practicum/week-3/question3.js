@@ -34,4 +34,3 @@ var PascalTriangle = function(n) {
   }
   return result;
 };
-console.log(PascalTriangle(8));
