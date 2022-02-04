@@ -23,7 +23,7 @@ var m_element = function(input) {
     }
     for (key in numCounter) {
         if (numCounter[key] > m) {
-            return key;
+            return Number(key);
         }
     }
     return -1;
