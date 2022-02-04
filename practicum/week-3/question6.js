@@ -12,5 +12,19 @@ output: 2
 */
 
 var m_element = function(input) {
-
+    let m = input.length / 2;
+    let numCounter = {};
+    for (let el of input) {
+        if (el in numCounter) {
+            numCounter[el]++;
+        } else {
+            numCounter[el] = 1;
+        }
+    }
+    for (key in numCounter) {
+        if (numCounter[key] > m) {
+            return key;
+        }
+    }
+    return -1;
 };
