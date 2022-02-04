@@ -10,15 +10,19 @@ Example: input: [-12,3,-1,5,-2,1,-7]
           */
 
 var largestSubarray = function(input) {
-	/*let result = [];
+	let result = [];
     let max = 0;
-    for (let el of input) {
-		if (el>max) {
-			max = el;
+    
+	for (let i=0; i<input.length; i++) {
+		for (let j = i; j<input.length; j++) {
+			let sum = input.slice(i,j+1).reduce((total, n) => total+n);
+			if (sum>max) {
+				max = sum;
+			}
 		}
-    }
-	for (let i=2; i<input.length; i++) {
-		let j = 0;
 		
-	}*/
+	}
+	return max;
  };
+console.log(largestSubarray([-12,3,-1,5,-2,1,-7]));
+console.log(largestSubarray([-17,3,1,5,-9,-1,10]));

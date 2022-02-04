@@ -13,5 +13,12 @@ Example:
 */
 
 var hasDuplicates = function(input) {
-
+    for (let i=0; i<input.length; i++) {
+        let tempArray = input.map(x => x);
+        let num = tempArray.splice(i,1);
+        if (num in tempArray) {
+            return true;
+        }
+    }
+    return false;
 };
