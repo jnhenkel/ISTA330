@@ -13,5 +13,22 @@ output: 3
 */
 
 var d_integer = function(input) {
-
+    let numCount = {};
+    let result = [];
+    for (let el of input) {
+        if (el in numCount) {
+            numCount[el]++;
+        } else {
+            numCount[el] = 1;
+        }
+    }
+    for (let key in numCount) {
+        if (numCount[key] == key) {
+            result.push(Number(key));
+        }
+    }
+    if (result.length) {
+        return result.sort((a,b) => b-a)[0];
+    }
+    return -1;
 };
