@@ -13,5 +13,30 @@ so there are two groups with the largest size.
 */
 
 var largestGroupsCount = function(n) {
-
+    let result = {};
+    for (let i=1; i<=n; i++) {
+        let nToArray = String(i).split('');
+        let tempSum = 0;
+        for (let el of nToArray) {
+            tempSum += Number(el);
+        }
+        if (tempSum in result) {
+            result[tempSum].push(i);
+        } else {
+            result[tempSum] = [i];
+        }
+    }
+    let maxLenArray = 0;
+    for (let key in result) {
+        if (result[key].length > maxLenArray) {
+            maxLenArray = result[key].length;
+        }
+    }
+    let finalCount = 0;
+    for (let key in result) {
+        if (result[key].length == maxLenArray) {
+            finalCount++;
+        }
+    }
+    return finalCount;
 };
