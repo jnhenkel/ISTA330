@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -100,7 +101,41 @@
             rose,
             waterlily
         ];
+        let flowerDiv = document.getElementById("flowersDiv");
+    function makeHTML(flowers) {
+        let msg = '';
+        for (let i = 0; i < flowers.length; i++) {
+            if (i == 0 || i == flowers.length / 2) {
+                msg += '<div class="row align-items-end m-2">';
+            }
+            msg += '<div class="col" >';
+                msg += `<div class="card" style="width:100%;" >`;
+                    msg += `<img class="card-img-top" onClick="moveFlower(${i});" src=${flowers[i].picture} style="height:100%;"> `;
+                    msg += '<h3 class="card-title">';
+                        msg += flowers[i].name;
+                    msg += '</h3>';
+                msg += '</div>';
+            msg += '</div>';
+            if (i == flowers.length / 2 - 1 || i == flowers.length) {
+                msg += '</div>';
+            }
+        }
+        return msg;
+    };
+
+        flowerDiv.innerHTML = makeHTML(flowers);
+
+       function moveFlower(i) {
+           let flower = flowers[i];
+           let tmpArr = flowers.map((x) => x);
+           tmpArr = tmpArr.filter((x) => x!=flower);
+           tmpArr.unshift(flower);
+           console.log(tmpArr[0]);
+           flowers = tmpArr;
+           flowerDiv.innerHTML = makeHTML(flowers);
+       }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
