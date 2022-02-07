@@ -54,30 +54,23 @@
        ];
        flowerDiv = document.getElementById("flowersDiv");
        let msg = '';
-       msg += '<div class="row align-items-end">';
-       for (let i=0; i<flowers.length /2; i++) {
+       for (let i=0; i<flowers.length; i++) {
+           if (i==0 || i==flowers.length/2 ) {
+               msg += '<div class="row align-items-end m-2">';
+           }
             msg += '<div class="col" >';
                 msg += '<div class="card" style="width:100%;">';
-                    msg += `<img class="card-img-top" width="100" height="100" src=${flowers[i].picture} style="height:100%;"> `;
+                    msg += `<img class="card-img-top"  src=${flowers[i].picture} style="height:100%;"> `;
                     msg += '<h3 class="card-title">';
                         msg += flowers[i].name;
                     msg += '</h3>';
                 msg += '</div>';
             msg += '</div>';
-       }
-       msg += '</div>';
-       msg += '<div class="row align-items-end">';
-       for (let i=flowers.length /2; i<flowers.length; i++) {
-            msg += '<div class="col" >';
-                msg += '<div class="card" style="width:100%;">';
-                    msg += `<img class="card-img-top" width="100" height="100" src=${flowers[i].picture} style="height:100%;"> `;
-                    msg += '<h3 class="card-title">';
-                        msg += flowers[i].name;
-                    msg += '</h3>';
+            if (i==flowers.length/2 -1 || i==flowers.length) {
                 msg += '</div>';
-            msg += '</div>';
+            }
        }
-       msg += '</div>';
+       
        flowerDiv.innerHTML = msg;
        
     </script>
