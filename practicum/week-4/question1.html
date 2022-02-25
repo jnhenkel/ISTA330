@@ -53,15 +53,15 @@
              waterlily
        ];
        flowerDiv = document.getElementById("flowersDiv");
-       let msg = '';
+       let msg = '<div class="container">';
        for (let i=0; i<flowers.length; i++) {
            if (i==0 || i==flowers.length/2 ) {
                msg += '<div class="row align-items-end m-2">';
            }
-            msg += '<div class="col" >';
+            msg += '<div class="col-sm-3" >';
                 msg += '<div class="card" style="width:100%;">';
                     msg += `<img class="card-img-top"  src=${flowers[i].picture} style="height:100%;"> `;
-                    msg += '<h3 class="card-title">';
+                    msg += '<h3 class="card-title m-auto" >';
                         msg += flowers[i].name;
                     msg += '</h3>';
                 msg += '</div>';
@@ -70,7 +70,7 @@
                 msg += '</div>';
             }
        }
-       
+       msg += '</div>';
        flowerDiv.innerHTML = msg;
        
     </script>
